@@ -10,7 +10,7 @@ This project was focused on learning the fundamentals of **alert triage** from t
 
 - Understanding the relationship between **events** and **alerts** inside a SIEM.  
 - Interpreting **alert properties** (status, severity, assignee, verdict).  
-- Applying **alert prioritization rules** (oldest first, medium > low severity).  
+- Applying **alert prioritization rules** (oldest first, critical > medium > low severity).  
 - Triaging alerts systematically and making escalation vs. closure decisions.  
 - Practicing structured, repeatable SOC L1 workflows.  
 - Reinforcing documentation habits in ticketing systems.  
@@ -39,7 +39,7 @@ Explored the SIEM alert columns: **status, name, verdict, severity, assignee, ti
 ### Task 4 – Alert Prioritization  
 Practiced prioritizing tickets:  
 - Handle oldest alerts first.  
-- Medium-severity alerts should be addressed before low-severity ones.  
+- Critical alerts should be addressed before Medium-severity and Medium-severity alerts should be addressed before low-severity ones.  
 
 ### Task 5 – Alert Triage  
 Worked through tickets one by one, analyzing context, then either **closing false positives** or **escalating true positives**. Learned the importance of making consistent, documented decisions.  
