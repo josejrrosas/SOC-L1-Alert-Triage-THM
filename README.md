@@ -10,7 +10,7 @@ This project was focused on learning the fundamentals of **alert triage** from t
 
 - Practical experience with the SOC L1 alert triage workflow.  
 - Reviewing alert metadata (source IPs, timestamps, usernames, severity).  
-- Performing IOC enrichment using tools like VirusTotal, WHOIS, and AbuseIPDB.  
+- Performing IOC enrichment using tools like VirusTotal and AbuseIPDB.  
 - Differentiating between false positives and true positives with proper justification.  
 - Writing concise escalation notes for L2 handoff.  
 - Strengthening critical thinking and decision-making in a SOC environment.  
@@ -40,9 +40,11 @@ Checked the alert metadata in the SIEM dashboard. Looked at source IP, destinati
 
 
 ### Step 2 – IOC Enrichment  
-Took the suspicious IP and ran it through VirusTotal and WHOIS. Determined whether it had a reputation for malicious activity.  
+Took the suspicious IP and ran it through VirusTotal. Determined whether it had a reputation for malicious activity.  
 
-*Ref 2: VirusTotal IP lookup (screenshot here)*  
+*Ref 2: VirusTotal IP lookup*
+<img width="3340" height="1814" alt="image" src="https://github.com/user-attachments/assets/8996173c-72d9-4429-bd4d-7be891c36cc4" />
+  
 
 ### Step 3 – Log Correlation  
 Cross-checked the alert against system logs to confirm whether the login attempts matched expected user behavior.  
