@@ -35,7 +35,9 @@ Below are the key steps and screenshots from the triage process.
 ### Step 1 – Reviewing the Alert  
 Checked the alert metadata in the SIEM dashboard. Looked at source IP, destination, severity, and login activity.  
 
-*Ref 1: Initial alert details (screenshot here)*  
+*Ref 1: Initial alert details*  
+<img width="2746" height="1688" alt="image" src="https://github.com/user-attachments/assets/daf7dd81-b15a-416d-a439-d13089df335a" />
+
 
 ### Step 2 – IOC Enrichment  
 Took the suspicious IP and ran it through VirusTotal and WHOIS. Determined whether it had a reputation for malicious activity.  
