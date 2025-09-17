@@ -1,77 +1,79 @@
 # SOC L1 Alert Triage – TryHackMe Case Study  
 
-## Objective  
+## 🔍 Objective  
 
-This project was focused on learning the fundamentals of **alert triage** from the perspective of a SOC Level 1 analyst. The lab simulated incoming alerts inside a SIEM-like environment, requiring review, enrichment, and classification. The goal was to practice making quick decisions on whether alerts were false positives or true positives, and documenting reasoning for potential escalation.  
-
----
-
-### Skills Learned  
-
-- Practical experience with the SOC L1 alert triage workflow.  
-- Reviewing alert metadata (source IPs, timestamps, usernames, severity).  
-- Performing IOC enrichment using tools like VirusTotal and AbuseIPDB.  
-- Differentiating between false positives and true positives with proper justification.  
-- Writing concise escalation notes for L2 handoff.  
-- Strengthening critical thinking and decision-making in a SOC environment.  
+This project was focused on learning the fundamentals of **alert triage** from the perspective of a SOC Level 1 analyst. The TryHackMe lab simulated incoming alerts in a SIEM-like environment and required me to review, prioritize, and make decisions on each ticket. The primary goal was to practice the Tier 1 SOC workflow of analyzing alerts, deciding whether to escalate or close them, and documenting reasoning clearly.  
 
 ---
 
-### Tools Used  
+## 🛠️ Skills Learned  
 
-- SIEM-style dashboards provided within the TryHackMe lab.  
-- External enrichment tools:  
-  - VirusTotal  
-  - WHOIS  
-  - AbuseIPDB  
-- Basic log analysis and alert correlation techniques.  
-
----
-
-## Steps  
-
-Below are the key steps and screenshots from the triage process.  
-
-### Step 1 – Reviewing the Alert  
-Checked the alert metadata in the SIEM dashboard. Looked at source IP, destination, severity, and login activity.  
-
-*Ref 1: Initial alert details*  
-<img width="2746" height="1688" alt="image" src="https://github.com/user-attachments/assets/daf7dd81-b15a-416d-a439-d13089df335a" />
-
-
-### Step 2 – IOC Enrichment  
-Took the suspicious IP and ran it through VirusTotal. Determined whether it had a reputation for malicious activity.  
-
-*Ref 2: VirusTotal IP lookup*
-<img width="3340" height="1814" alt="image" src="https://github.com/user-attachments/assets/8996173c-72d9-4429-bd4d-7be891c36cc4" />
-  
-
-### Step 3 – Log Correlation  
-Cross-checked the alert against system logs to confirm whether the login attempts matched expected user behavior.  
-
-*Ref 3: Log correlation results (screenshot here)*  
-
-### Step 4 – Classification and Escalation  
-Marked the alert as a **true positive** due to confirmed malicious IP combined with abnormal login activity. Documented reasoning and prepared notes for escalation to L2.  
-
-*Ref 4: Escalation notes in SIEM (screenshot here)*  
+- Understanding the relationship between **events** and **alerts** inside a SIEM.  
+- Interpreting **alert properties** (status, severity, assignee, verdict).  
+- Applying **alert prioritization rules** (oldest first, medium > low severity).  
+- Triaging alerts systematically and making escalation vs. closure decisions.  
+- Practicing structured, repeatable SOC L1 workflows.  
+- Reinforcing documentation habits in ticketing systems.  
 
 ---
 
-## Example Detections  
+## ⚙️ Tools Used  
 
-- **IP-based IOC**: Outbound traffic to a known malicious C2 server.  
-- **Domain-based IOC**: Login attempts tied to a newly-registered suspicious domain.  
-- **Host Artifact**: Unusual process execution pattern (Word → PowerShell).  
-- **Network Artifact**: Rare User-Agent string observed in HTTP POST requests.  
+- TryHackMe’s simulated SIEM dashboard  
+- Basic alert fields and filtering functions (status, severity, timestamps)  
+- No external enrichment tools in this room — focus was on workflow and prioritization  
+
+---
+
+## 📂 Process  
+
+### Task 1 – Introduction  
+Reviewed the simulated SOC ticket queue in TryHackMe’s SIEM. Objective: work through alerts, analyze issues, and either escalate or close them.  
+
+### Task 2 – Events vs. Alerts  
+Learned the difference between raw **events** (all logged activity) and **alerts** (filtered, rule-based triggers for suspicious activity).  
+
+### Task 3 – Alert Properties  
+Explored the SIEM alert columns: **status, name, verdict, severity, assignee, timestamp,** etc. Understood how these fields drive triage decisions.  
+
+### Task 4 – Alert Prioritization  
+Practiced prioritizing tickets:  
+- Handle oldest alerts first.  
+- Medium-severity alerts should be addressed before low-severity ones.  
+
+### Task 5 – Alert Triage  
+Worked through tickets one by one, analyzing context, then either **closing false positives** or **escalating true positives**. Learned the importance of making consistent, documented decisions.  
+
+### Task 6 – Final Review  
+Completed triage of the ticket queue, confirming understanding of the workflow and ensuring proper closure or escalation for all assigned alerts.  
 
 ---
 
-## Lessons Learned  
+## 🛡️ Example Takeaways from Triage  
 
-- Not every alert is worth escalating — context is key.  
-- Enrichment is essential to avoid wasting time on false positives.  
-- Having a consistent workflow (Review → Enrich → Decide → Escalate) keeps triage efficient and repeatable.  
-- Documentation of reasoning is just as important as detection.  
+- **Low-severity alert**: Closed after confirming expected behavior.  
+- **Medium-severity alert**: Escalated when context suggested abnormal or potentially malicious activity.  
+- **SIEM status fields**: Used to track progress and accountability across the SOC team.  
 
 ---
+
+## 🧠 Lessons Learned  
+
+- SOC L1 work is **pattern recognition and decision discipline** — you need to follow a repeatable process to avoid mistakes.  
+- Not every alert is actionable; triage is about separating noise from signals.  
+- Prioritization rules (oldest first, medium > low) help keep queues manageable.  
+- Documentation of *why* an alert was closed or escalated is critical for SOC communication.  
+
+---
+
+## 🚀 Next Steps  
+
+- Apply the same workflow to more complex labs with external enrichment.  
+- Practice documenting triage decisions as if writing real SOC tickets.  
+- Expand into L2 tasks: correlating multiple alerts, mapping activity to MITRE ATT&CK.  
+
+---
+
+## 📄 References  
+
+- [TryHackMe: SOC L1 Alert Triage](https://tryhackme.com/room/socl1alerttriage)  
